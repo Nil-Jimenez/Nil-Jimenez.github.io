@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Joc - Trivial</title>
+    <!-- bootstrap per complementar el css i millorar el disseny-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- estils.css per els estils personalitzats -->
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+
+    <header>
+        <div class="banner"></div>
+        <nav class="navbar navbar-expand">
+            <div class="container justify-content-center">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Presentació</a>
+                    <a class="nav-link" href="hobbies.html">Aficions</a>
+                    <a class="nav-link" href="trivial.html">Trivial Baldomero</a>
+                    <a class="nav-link" href="contact.html">Contacte</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5" style="max-width: 800px;">
+
+        <p class="section-label">Joc</p>
+        <h1 class="mb-4">Trivial de Baldomero Runs out of Time</h1>
+
+         <!-- cada div, te una pregunta amb les seves respostes, i amb un valor que indica si es correcte o no -->
+        <div class="mb-5 p-3 border rounded">
+            <h3>1. Quin es el nom complert de Baldomero</h3>
+            <div class="resposta" data-valor="incorrecte">1- Baldomero Cabezon</div>
+            <div class="resposta" data-valor="incorrecte">2- Baldomero Cabeza de Piedra</div>
+            <div class="resposta" data-valor="incorrecte">3- Baldomero Cabeza de Roca</div>
+            <div class="resposta" data-valor="correcte">4- Don Baldomero Cabeda de Roca</div>
+        </div>
+
+        <div class="mb-5 p-3 border rounded">
+            <h3>2. Perque en Baldomero viu amb la seva mare?</h3>
+            <div class="resposta" data-valor="incorrecte">1- El seu pare es va morir</div>
+            <div class="resposta" data-valor="correcte">2- El van desterrar del seu poble</div>
+            <div class="resposta" data-valor="incorrecte">3- Els seus pares es van divorciar</div>
+            <div class="resposta" data-valor="incorrecte">4- El pare li va tocar la loteria</div>
+        </div>
+
+        <div class="mb-5 p-3 border rounded">
+            <h3>3. Quin es l'objectiu del joc?</h3>
+            <div class="resposta" data-valor="correcte">1- Anar a coneixer al teu pare abans que es mori de vell</div>
+            <div class="resposta" data-valor="incorrecte">2- Tornar al teu poble natal, per parlar amb l'alcalde i poder tornar a viure amb la teva mare</div>
+            <div class="resposta" data-valor="incorrecte">3- Explorar el mon exterior</div>
+            <div class="resposta" data-valor="incorrecte">4- Abandonar a la teva mare</div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+        <p>Fet per: Nil Jimenez</p>
+        <a href="https://github.com/Nil-Jimenez"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="footer-icon" width="40"></a>
+        <a href="https://www.linkedin.com/in/nil-jim%C3%A9nez-baa706364/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="footer-icon" width="40"></a>
+    </footer>
+
+    <script>
+        const totesLesRespostes = document.querySelectorAll(".resposta");
+
+        // afegir un event listener a cada opció de resposta per detectar quan es fa click i despres comprovar si es correcte o no
+        totesLesRespostes.forEach(function(opcio) {
+            opcio.addEventListener("click", function()
+            {
+                if (opcio.dataset.valor === "correcte") 
+                {
+                    opcio.classList.add("resposta-correcta");
+                } else {
+                    opcio.classList.add("resposta-incorrecta");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
